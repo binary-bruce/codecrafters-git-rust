@@ -61,13 +61,7 @@ fn main() -> anyhow::Result<()> {
 
     // Uncomment this block to pass the first stage
     match args.command {
-        Command::Init => {
-            fs::create_dir(".git").unwrap();
-            fs::create_dir(".git/objects").unwrap();
-            fs::create_dir(".git/refs").unwrap();
-            fs::write(".git/HEAD", "ref: refs/heads/main\n").unwrap();
-            println!("Initialized git directory")
-        }
+        Command::Init => commands::init::invoke()?,
         Command::CatFile {
             pretty_print,
             object_hash,
