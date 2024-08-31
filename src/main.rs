@@ -60,21 +60,27 @@ fn main() -> anyhow::Result<()> {
     // Uncomment this block to pass the first stage
     match args.command {
         Command::Init => commands::init::invoke()?,
+
         Command::CatFile {
             pretty_print,
             object_hash,
         } => commands::cat_file::invoke(pretty_print, &object_hash)?,
+
         Command::HashObject { write, file } => commands::hash_object::invoke(write, &file)?,
+
         Command::LsTree {
             name_only,
             tree_hash,
         } => commands::ls_tree::invoke(name_only, &tree_hash)?,
+
         Command::WriteTree => commands::write_tree::invoke()?,
+
         Command::CommitTree {
             message,
             tree_hash,
             parent_hash,
         } => commands::commit_tree::invoke(message, tree_hash, parent_hash)?,
+
         Command::Commit { message } => commands::commit::invoke(message)?,
     }
 
