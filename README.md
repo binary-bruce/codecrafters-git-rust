@@ -1,3 +1,5 @@
+![Git Object Model](./git-object-model.png)
+
 [![progress-banner](https://backend.codecrafters.io/progress/git/94eacba5-78e7-4683-be2f-6b68fd96ce49)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)
 
 This is a starting point for Rust solutions to the
